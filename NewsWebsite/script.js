@@ -15,7 +15,7 @@ async function fetchNews(query) {
 }
 
 function bindData(articles) {
-    const cardContainer = document.getElementById('card-conatiner');
+    const cardContainer = document.getElementById('card-container');
     const newsCardTemplate = document.getElementById('template-news-card');
 
     cardContainer.innerHTML = "";
