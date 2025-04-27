@@ -70,6 +70,7 @@ function endGame() {
 
 function restartGame() {
 	startGame();
+	displayMessage("","");
 	document.getElementById('restartBtn').style.display = 'none';
 }
 
