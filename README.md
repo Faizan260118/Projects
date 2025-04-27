@@ -2,5 +2,5 @@
 
 ### Projects Name:- ⬇️
 
---- Number Guessing Game
---- Multiplication Table Generator
+1. Number Guessing Game <br>
+2. Multiplication Table Generator <br>
