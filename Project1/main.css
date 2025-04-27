@@ -67,3 +67,10 @@ button:hover {
 	background-color: #f0f0f0;
 	border-radius: 5px;
 }
+
+/* for message styling */
+.success { color: green; }
+
+.failure { color: red; }
+
+.hint { color: orange; }
