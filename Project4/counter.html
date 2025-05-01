@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increment Decrement Counter Web App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #111;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+        }
+
+        #resetBtn {
+            background-color: #444;
+            color: #fff;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        #resetBtn:hover {
+            background-color: #666;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .box button {
+            background-color: #fff;
+            color: #000;
+            padding: 14px 30px;
+            font-size: 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .box button:hover {
+            background-color: #ddd;
+        }
+
+        .box button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+
+        #num {
+            font-size: 2.8rem;
+            min-width: 60px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            #resetBtn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .box {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .box button {
+                width: 100%;
+                font-size: 1.8rem;
+                padding: 12px 0;
+            }
+
+            #num {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <button type="button" id="resetBtn">Reset</button>
+        <div class="box">
+            <button type="button" id="decrement">−</button>
+            <p id="num">0</p>
+            <button type="button" id="increment">+</button>
+        </div>
+    </div>
+
+    <script>
+        const incrementtButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const numberResult = document.getElementById('num');
+        const resetBtn = document.getElementById('resetBtn');
+
+        let count = 0;
+
+        const updateCountDisplay = () => {
+            numberResult.innerText = count;
+            decrementButton.disabled = count === 0;
+        };
+
+        const incrementCount = () => {
+            count++;
+            updateCountDisplay();
+        };
+
+        const decrementCount = () => {
+            if (count > 0) {
+                count--;
+                updateCountDisplay();
+            }
+        };
+
+        const resetCount = () => {
+            count = 0;
+            updateCountDisplay();
+        };
+        updateCountDisplay();
+
+        incrementtButton.addEventListener('click', incrementCount);
+        decrementButton.addEventListener('click', decrementCount);
+        resetBtn.addEventListener('click', resetCount);
+
+    </script>
+</body>
+
+</html>
