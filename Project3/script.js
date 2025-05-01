@@ -1,6 +1,7 @@
 const form = document.getElementById('bmi-form');
 const results = document.getElementById('results');
 const restartBtn = document.getElementById('restart-btn');
+const toggleThemeBtn = document.getElementById('toggle-theme');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -34,4 +35,10 @@ restartBtn.addEventListener('click', function () {
     form.reset();
     results.innerHTML = '';
     restartBtn.style.display = 'none';
+});
+
+toggleThemeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    toggleThemeBtn.textContent =
+        document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
 });
