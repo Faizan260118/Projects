@@ -160,9 +160,26 @@
         };
         updateCountDisplay();
 
-        incrementtButton.addEventListener('click', incrementCount);
+        incrementtButton.addEventListener('press', incrementCount);
         decrementButton.addEventListener('click', decrementCount);
         resetBtn.addEventListener('click', resetCount);
+
+        // If you want the number to increment while the button is being held down (not just clicked once), you can simulate this using mousedown and mouseup events:
+        // let incrementInterval;
+
+        // incrementButton.addEventListener('mousedown', () => {
+        //     incrementCount(); // do an immediate increment
+        //     incrementInterval = setInterval(incrementCount, 150); // repeat every 150ms
+        // });
+
+        // incrementButton.addEventListener('mouseup', () => {
+        //     clearInterval(incrementInterval);
+        // });
+
+        // incrementButton.addEventListener('mouseleave', () => {
+        //     clearInterval(incrementInterval); // in case mouse leaves the button while held
+        // });
+
 
     </script>
 </body>
