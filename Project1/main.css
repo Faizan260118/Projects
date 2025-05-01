@@ -1,8 +1,11 @@
+/* Base Styles */
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f8f8f8;
+	color: #333;
 	margin: 0;
 	padding: 0;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -13,23 +16,26 @@ body {
 	background-color: #fff;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	text-align: center;
+	transition: background-color 0.3s ease;
 }
 
 h1 {
 	margin-bottom: 20px;
+	font-size: 1.8rem;
 }
 
 input[type="number"] {
-	width: 70%;
+	width: 100%;
 	padding: 10px;
 	font-size: 16px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
+	margin-bottom: 10px;
 }
 
 button {
-	width: 30%;
+	width: 100%;
 	padding: 12px;
 	margin-top: 10px;
 	cursor: pointer;
@@ -38,6 +44,7 @@ button {
 	border: none;
 	border-radius: 5px;
 	transition: background-color 0.3s ease;
+	font-size: 16px;
 }
 
 button:hover {
@@ -50,11 +57,7 @@ button:hover {
 	font-weight: bold;
 }
 
-#attempts {
-	margin-top: 20px;
-	font-size: 16px;
-}
-
+#attempts,
 #guessList {
 	margin-top: 20px;
 	font-size: 16px;
@@ -68,9 +71,38 @@ button:hover {
 	border-radius: 5px;
 }
 
-/* for message styling */
+/* Message types */
 .success { color: green; }
-
 .failure { color: red; }
-
 .hint { color: orange; }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #121212;
+		color: #f0f0f0;
+	}
+
+	.container {
+		background-color: #1e1e1e;
+		box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+	}
+
+	input[type="number"] {
+		background-color: #2c2c2c;
+		color: #fff;
+		border: 1px solid #555;
+	}
+
+	button {
+		background-color: #388e3c;
+	}
+
+	button:hover {
+		background-color: #2e7d32;
+	}
+
+	.guess-item {
+		background-color: #2a2a2a;
+	}
+}
