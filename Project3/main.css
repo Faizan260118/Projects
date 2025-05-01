@@ -1,49 +1,80 @@
+:root {
+    --bg: #f0f4f8;
+    --text: #222;
+    --input-bg: #fff;
+    --card-bg: #ffffff;
+    --accent: #5c6ac4;
+    --danger: #f44336;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --input-bg: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --accent: #6a8dff;
+    --danger: #ff6b6b;
+    --shadow: rgba(255, 255, 255, 0.1);
+}
+
 * {
-    padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background: #f0f4f8;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .container {
-    background: #fff;
+    background: var(--card-bg);
     padding: 30px 40px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    box-shadow: 0 8px 20px var(--shadow);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    transition: background 0.3s;
 }
 
 form h1 {
     margin-bottom: 20px;
-    color: #333;
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
     font-weight: 500;
-    color: #555;
 }
 
 input[type="number"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #999;
     border-radius: 8px;
     font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
 }
 
-input[type="number"]:focus {
-    border-color: #5c6ac4;
-    box-shadow: 0 0 5px rgba(92, 106, 196, 0.3);
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 5px var(--accent);
     outline: none;
 }
 
@@ -59,7 +90,7 @@ button {
 }
 
 #calculate-btn {
-    background-color: #5c6ac4;
+    background-color: var(--accent);
     color: #fff;
 }
 
@@ -68,7 +99,7 @@ button {
 }
 
 #restart-btn {
-    background-color: #f44336;
+    background-color: var(--danger);
     color: #fff;
     display: none;
 }
@@ -81,5 +112,30 @@ button {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
-    color: #444;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#toggle-theme {
+    padding: 8px 14px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#toggle-theme:hover {
+    background-color: #4b56a2;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
 }
