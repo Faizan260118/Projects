@@ -5,3 +5,4 @@
 1. Number Guessing Game <br>
 2. Multiplication Table Generator <br>
 3. BMI Calculator <br>
+4. Counter App <br>
