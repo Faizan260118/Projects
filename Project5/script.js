@@ -13,19 +13,20 @@ numberButtons.forEach(button => {
 // Handle operator button clicks with validation
 operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const value = button.textContent;
+        let value = button.textContent;
         const lastChar = display.value.slice(-1);
 
         if (value === '=') {
             try {
-                display.value = eval(display.value);
+                // Replace X with * before evaluation
+                const expression = display.value.replace(/X/g, '*');
+                display.value = eval(expression);
             } catch {
                 display.value = 'Error';
             }
         } else {
-            // Prevent operator if input is empty or last char is an operator
-            if (display.value === '' || /[+\-*/%]/.test(lastChar)) return;
-
+            // Prevent operator at start or double operator
+            if (display.value === '' || /[+\-*/%X]/.test(lastChar)) return;
             display.value += value;
         }
     });
