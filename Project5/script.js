@@ -1,71 +1,46 @@
+
 const display = document.querySelector('input[name="display"]');
 const numberButtons = document.querySelectorAll('.button.number');
 const operatorButtons = document.querySelectorAll('.button.operator');
 const actionButtons = document.querySelectorAll('.button.action');
 
-const operatorSymbols = ['+', '-', '%', '÷', '×'];
-
-function isLastCharOperator(val) {
-    return operatorSymbols.includes(val.slice(-1));
-}
-
-// Add number to display
+// Handle number button clicks
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         display.value += button.textContent;
     });
 });
 
-// Handle operator clicks
+// Handle operator button clicks with validation
 operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const value = button.textContent;
+        let value = button.textContent;
+        const lastChar = display.value.slice(-1);
 
         if (value === '=') {
-            if (display.value === '' || isLastCharOperator(display.value)) return;
-
             try {
-                const expression = display.value
-                    .replace(/×/g, '*')
-                    .replace(/÷/g, '/');
+                // Replace X with * before evaluation
+                const expression = display.value.replace(/X/g, '*');
                 display.value = eval(expression);
             } catch {
                 display.value = 'Error';
             }
         } else {
-            if (display.value === '' || isLastCharOperator(display.value)) return;
+            // Prevent operator at start or double operator
+            if (display.value === '' || /[+\-*/%X]/.test(lastChar)) return;
             display.value += value;
         }
     });
 });
 
-// Handle AC and DEL
+// Handle AC and DEL buttons
 actionButtons.forEach(button => {
     button.addEventListener('click', () => {
         const action = button.textContent;
-        if (action === 'AC') display.value = '';
-        else if (action === 'DEL') display.value = display.value.slice(0, -1);
-    });
-});
-
-// ✅ Optional: Keyboard support
-window.addEventListener('keydown', (e) => {
-    const key = e.key;
-
-    if (!isNaN(key) || ['+', '-', '*', '/', '.', '%'].includes(key)) {
-        display.value += key;
-    } else if (key === 'Enter') {
-        try {
-            const expression = display.value
-                .replace(/×/g, '*')
-                .replace(/÷/g, '/');
-            display.value = eval(expression);
-        } catch {
-            display.value = 'Error';
+        if (action === 'AC') {
+            display.value = '';
+        } else if (action === 'DEL') {
+            display.value = display.value.slice(0, -1);
         }
-    } else if (key === 'Backspace') {
-        display.value = display.value.slice(0, -1);
-    } else if (key === 'Escape') {
-        display.value = '';
-    }
+    });
 });
