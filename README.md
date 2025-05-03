@@ -6,3 +6,4 @@
 2. Multiplication Table Generator <br>
 3. BMI Calculator <br>
 4. Counter App <br>
+5. Calculator <br>
