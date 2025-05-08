@@ -7,3 +7,4 @@
 3. BMI Calculator <br>
 4. Counter App <br>
 5. Calculator <br>
+6. Random user generator <br>
