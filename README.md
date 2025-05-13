@@ -1,10 +1,39 @@
-## In this repo you will find beginner friendly projects simple using core HTML, CSS and Javascript.
+# 🚀 JavaScript Mini Projects
 
-### Projects Name:- ⬇️
+A curated collection of beginner-to-intermediate level JavaScript projects.  
+Each project is built using **HTML**, **CSS**, and **Vanilla JavaScript** — perfect for learning DOM manipulation, event handling, and frontend logic.
 
-1. Number Guessing Game <br>
-2. Multiplication Table Generator <br>
-3. BMI Calculator <br>
-4. Counter App <br>
-5. Calculator <br>
-6. Random user generator <br>
+---
+
+## 📦 Projects Included
+
+| Project Name            | Description                                         |
+|-------------------------|-----------------------------------------------------|
+| 🎯 Number Guessing Game | Guess the secret number with hints and feedback     |
+| ✖️ Multiplication Table Generator | Enter the number and get multiplication table     |
+| 🩸 BMI Calculator           | Simple BMI Calculator using bmi formula     |
+| ➕ Counter App           | Simple counter with increment, decrement, reset     |
+| 🧮 Calculator            | Basic calculator with arithmetic operations         |
+| 👥 Random user generator      | This generate random user from API                 |
+
+> 📁 Each project is in its own folder with `index.html`, `style.css`, and `script.js`.
+
+---
+
+## 🎯 Skills You'll Practice
+
+- DOM Manipulation
+- JavaScript Events
+- Conditional Logic
+- Working with APIs
+- Theme Switching (Dark/Light Mode)
+- Modular & Clean Code Structure
+
+---
+
+## 🚀 How to Run These Projects
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/js-mini-projects.git
+cd js-mini-projects
