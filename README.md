@@ -30,10 +30,3 @@ Each project is built using **HTML**, **CSS**, and **Vanilla JavaScript** — pe
 - Modular & Clean Code Structure
 
 ---
-
-## 🚀 How to Run These Projects
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/js-mini-projects.git
-cd js-mini-projects
