@@ -15,6 +15,7 @@ Each project is built using **HTML**, **CSS**, and **Vanilla JavaScript** — pe
 | ➕ Counter App           | Simple counter with increment, decrement, reset     |
 | 🧮 Calculator            | Basic calculator with arithmetic operations         |
 | 👥 Random user generator      | This generate random user from API                 |
+| 👥 Random joke generator      | This generate random joke from API                 |
 
 > 📁 Each project is in its own folder with `index.html`, `style.css`, and `script.js`.
 
